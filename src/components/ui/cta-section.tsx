@@ -1,5 +1,5 @@
 import { motion } from "motion/react";
-import { Link } from "@tanstack/react-router";
+import Link from "next/link";
 import { ArrowRight, Phone } from "lucide-react";
 import { AnimatedButton } from "./animated-button";
 
@@ -48,7 +48,7 @@ export function CTASection({
               {description}
             </p>
             <div className="mt-9 flex flex-col sm:flex-row items-center justify-center gap-3">
-              <Link to={primaryHref}>
+              <Link href={primaryHref}>
                 <AnimatedButton size="lg" icon={<ArrowRight className="h-4 w-4" />}>
                   {primaryLabel}
                 </AnimatedButton>

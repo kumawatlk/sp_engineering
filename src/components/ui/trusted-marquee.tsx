@@ -1,5 +1,6 @@
 import { motion } from "motion/react";
 import { cn } from "@/lib/utils";
+import type { StaticImageData } from "next/image";
 import aaronLogo from "@/assets/clients/aaron.png";
 import primeFocusLogo from "@/assets/clients/prime-focus.png";
 import phoenixLogo from "@/assets/clients/phoenix.png";
@@ -10,6 +11,9 @@ import nxtraLogo from "@/assets/clients/nxtra.png";
 import medicoverLogo from "@/assets/clients/medicover.png";
 import petrofacLogo from "@/assets/clients/petrofac.jpg";
 import srvLogo from "@/assets/clients/srv.jpg";
+import Listenlights_logo from "@/assets/clients/Listenlights_logo.svg";
+import htl_aircon_logo from "@/assets/clients/htl_aircon_logo.jpg";
+import KIMS_Hospital_logo from "@/assets/clients/KIMS_Hospital_logo.png";
 const CLIENTS = [
   {
     name: "Aaron",
@@ -51,10 +55,22 @@ const CLIENTS = [
     name: "SRV Hospitals",
     logo: srvLogo,
   },
+  {
+    name: "Listenlights",
+    logo: Listenlights_logo,
+  },
+  {
+    name: "KIMS Hospitals",
+    logo: KIMS_Hospital_logo,
+  },
+  {
+    name: "htl aircon",
+    logo: htl_aircon_logo,
+  },
 ];
 type Client = {
   name: string;
-  logo: string;
+  logo: StaticImageData;
 };
 
 type RowProps = {
@@ -72,7 +88,7 @@ function LogoCard({ client }: { client: Client }) {
         "backdrop-blur-xl",
         "transition-all duration-500 ease-out",
         "hover:-translate-y-1 hover:border-primary/40",
-        "hover:shadow-[0_10px_50px_-12px_hsl(var(--primary)/0.45)]"
+        "hover:shadow-[0_10px_50px_-12px_hsl(var(--primary)/0.45)]",
       )}
     >
       {/* Background Glow */}
@@ -91,14 +107,14 @@ function LogoCard({ client }: { client: Client }) {
       {/* Logo */}
       <div className="relative z-10 flex items-center justify-center px-8">
         <img
-          src={client.logo}
+          src={client.logo.src}
           alt={client.name}
           className={cn(
             "h-14 w-auto object-contain",
             "opacity-80 grayscale",
             "transition-all duration-500",
             "group-hover:opacity-100 group-hover:grayscale-0",
-            "group-hover:scale-110"
+            "group-hover:scale-110",
           )}
         />
       </div>
@@ -144,8 +160,7 @@ export function TrustedMarquee() {
           backgroundImage:
             "linear-gradient(hsl(var(--primary)/0.5) 1px, transparent 1px), linear-gradient(90deg, hsl(var(--primary)/0.5) 1px, transparent 1px)",
           backgroundSize: "56px 56px",
-          maskImage:
-            "radial-gradient(ellipse at center, black 40%, transparent 80%)",
+          maskImage: "radial-gradient(ellipse at center, black 40%, transparent 80%)",
         }}
       />
       {/* Animated drifting grid layer */}
@@ -164,12 +179,16 @@ export function TrustedMarquee() {
       <div
         aria-hidden
         className="absolute -top-32 left-1/4 h-[420px] w-[420px] rounded-full blur-3xl"
-        style={{ background: "radial-gradient(closest-side, hsl(var(--primary)/0.22), transparent)" }}
+        style={{
+          background: "radial-gradient(closest-side, hsl(var(--primary)/0.22), transparent)",
+        }}
       />
       <div
         aria-hidden
         className="absolute -bottom-32 right-1/4 h-[420px] w-[420px] rounded-full blur-3xl"
-        style={{ background: "radial-gradient(closest-side, hsl(var(--primary)/0.18), transparent)" }}
+        style={{
+          background: "radial-gradient(closest-side, hsl(var(--primary)/0.18), transparent)",
+        }}
       />
 
       <div className="container relative mx-auto px-6">
@@ -192,8 +211,8 @@ export function TrustedMarquee() {
             </span>
           </h2>
           <p className="mt-5 text-base md:text-lg text-foreground/65 leading-relaxed">
-            We proudly deliver engineering solutions for leading industrial,
-            healthcare, commercial, and corporate organizations.
+            We proudly deliver engineering solutions for leading industrial, healthcare, commercial,
+            and corporate organizations.
           </p>
         </motion.div>
 

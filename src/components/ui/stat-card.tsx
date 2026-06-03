@@ -29,10 +29,7 @@ export function StatCard({ value, suffix = "+", label, index = 0, className }: S
       initial={{ opacity: 0, y: 20 }}
       animate={inView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.5, delay: index * 0.08 }}
-      className={cn(
-        "relative rounded-2xl glass p-7 text-center overflow-hidden",
-        className,
-      )}
+      className={cn("relative rounded-2xl glass p-7 text-center overflow-hidden", className)}
     >
       <div className="absolute inset-x-0 -top-1/2 h-full bg-gradient-radial opacity-60" />
       <div className="relative">

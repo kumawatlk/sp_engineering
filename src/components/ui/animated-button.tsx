@@ -11,8 +11,7 @@ const buttonVariants = cva(
           "bg-gradient-brand text-primary-foreground glow-brand-sm hover:glow-brand hover:-translate-y-0.5",
         outline:
           "border border-primary/40 text-foreground hover:bg-primary/10 hover:border-primary",
-        ghost:
-          "text-foreground hover:bg-secondary/60",
+        ghost: "text-foreground hover:bg-secondary/60",
         metallic:
           "bg-gradient-to-br from-metallic to-metallic/60 text-ink hover:-translate-y-0.5 hover:shadow-elevated",
         glass: "glass text-foreground hover:bg-card/80",
@@ -29,19 +28,14 @@ const buttonVariants = cva(
 );
 
 export interface AnimatedButtonProps
-  extends ButtonHTMLAttributes<HTMLButtonElement>,
-    VariantProps<typeof buttonVariants> {
+  extends ButtonHTMLAttributes<HTMLButtonElement>, VariantProps<typeof buttonVariants> {
   icon?: ReactNode;
 }
 
 export const AnimatedButton = forwardRef<HTMLButtonElement, AnimatedButtonProps>(
   ({ className, variant, size, children, icon, ...props }, ref) => {
     return (
-      <button
-        ref={ref}
-        className={cn(buttonVariants({ variant, size }), className)}
-        {...props}
-      >
+      <button ref={ref} className={cn(buttonVariants({ variant, size }), className)} {...props}>
         <span className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 bg-gradient-to-r from-transparent via-white/15 to-transparent" />
         <span className="relative flex items-center gap-2">
           {children}

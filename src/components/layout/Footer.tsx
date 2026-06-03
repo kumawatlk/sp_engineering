@@ -1,4 +1,4 @@
-import { Link } from "@tanstack/react-router";
+import Link from "next/link";
 import { Phone, Mail, MapPin, Facebook, Instagram, Linkedin, Twitter } from "lucide-react";
 import logo from "@/assets/logo/sp-small_logo.png";
 
@@ -30,7 +30,7 @@ export function Footer() {
         <div className="grid gap-12 lg:grid-cols-12">
           {/* Brand */}
           <div className="lg:col-span-4">
-            <img src={logo} alt="SP Engineering" className="h-10 w-auto mb-5" />
+            <img src={logo.src} alt="SP Engineering" className="h-10 w-auto mb-5" />
             <p className="text-sm text-muted-foreground leading-relaxed max-w-sm">
               Engineering excellence built on precision, innovation, and decades of industrial
               expertise. SP Engineering delivers premium fabrication and turnkey solutions across
@@ -59,7 +59,7 @@ export function Footer() {
               {QUICK.map((l) => (
                 <li key={l.to}>
                   <Link
-                    to={l.to}
+                    href={l.to}
                     className="text-sm text-muted-foreground hover:text-primary transition-colors"
                   >
                     {l.label}
@@ -76,7 +76,10 @@ export function Footer() {
             </h4>
             <ul className="space-y-3">
               {SERVICES.map((s) => (
-                <li key={s} className="text-sm text-muted-foreground hover:text-primary transition-colors cursor-pointer">
+                <li
+                  key={s}
+                  className="text-sm text-muted-foreground hover:text-primary transition-colors cursor-pointer"
+                >
                   {s}
                 </li>
               ))}
@@ -92,21 +95,28 @@ export function Footer() {
               <li className="flex gap-3">
                 <Phone className="h-4 w-4 mt-0.5 text-primary shrink-0" />
                 <div className="text-muted-foreground">
-                  <a href="tel:+918097604693" className="block hover:text-foreground">+91 80976 04693</a>
-                  <a href="tel:+918552077798" className="block hover:text-foreground">+91 85520 77798</a>
+                  <a href="tel:+918097604693" className="block hover:text-foreground">
+                    +91 80976 04693
+                  </a>
+                  <a href="tel:+918552077798" className="block hover:text-foreground">
+                    +91 85520 77798
+                  </a>
                 </div>
               </li>
               <li className="flex gap-3">
                 <Mail className="h-4 w-4 mt-0.5 text-primary shrink-0" />
-                <a href="mailto:spengineering185@gmail.com" className="text-muted-foreground hover:text-foreground break-all">
+                <a
+                  href="mailto:spengineering185@gmail.com"
+                  className="text-muted-foreground hover:text-foreground break-all"
+                >
                   spengineering185@gmail.com
                 </a>
               </li>
               <li className="flex gap-3">
                 <MapPin className="h-4 w-4 mt-0.5 text-primary shrink-0" />
                 <p className="text-muted-foreground leading-relaxed">
-                  10th Floor, Lotus Building, Flat No.1001, Deep Garden, Chedha Nagar,
-                  Nalasopara East, Vasai - 401209
+                  10th Floor, Lotus Building, Flat No.1001, Deep Garden, Chedha Nagar, Nalasopara
+                  East, Vasai - 401209
                 </p>
               </li>
             </ul>

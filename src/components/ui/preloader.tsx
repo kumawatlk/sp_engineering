@@ -22,7 +22,7 @@ export function Preloader() {
           <div className="absolute inset-0 bg-gradient-radial" />
           <div className="relative flex flex-col items-center gap-6">
             <motion.img
-              src={logo}
+              src={logo.src}
               alt="SP Engineering"
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
