@@ -14,6 +14,7 @@ import srvLogo from "@/assets/clients/srv.jpg";
 import Listenlights_logo from "@/assets/clients/Listenlights_logo.svg";
 import htl_aircon_logo from "@/assets/clients/htl_aircon_logo.jpg";
 import KIMS_Hospital_logo from "@/assets/clients/KIMS_Hospital_logo.png";
+import abs_general from "@/assets/clients/abs_general.jpg";
 const CLIENTS = [
   {
     name: "Aaron",
@@ -66,6 +67,10 @@ const CLIENTS = [
   {
     name: "htl aircon",
     logo: htl_aircon_logo,
+  },
+  {
+    name: "htl aircon",
+    logo: abs_general,
   },
 ];
 type Client = {
